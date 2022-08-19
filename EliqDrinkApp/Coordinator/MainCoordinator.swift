@@ -15,13 +15,14 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        super.init()
-        self.navigationController.delegate = self
     }
     
     func start() {
+        navigationController.delegate = self
+        //navigationController.navigationBar.prefersLargeTitles = true
         let mainViewController = MainViewController.instantiate()
         mainViewController.coordinator = self
+        mainViewController.title = Constants.navigationTitle
         navigationController.pushViewController(mainViewController, animated: false)
     }
     
