@@ -1,0 +1,32 @@
+//
+//  MainCoordinator.swift
+//  EliqDrinkApp
+//
+//  Created by ReliSource Technologies Ltd. on 8/19/22.
+//
+
+import Foundation
+import UIKit
+import SwiftUI
+
+class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
+    var childCoordinators = [Coordinator]()
+    var navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        super.init()
+        self.navigationController.delegate = self
+    }
+    
+    func start() {
+        let mainViewController = MainViewController.instantiate()
+        mainViewController.coordinator = self
+        navigationController.pushViewController(mainViewController, animated: false)
+    }
+    
+    func goToDetailsView() {
+        let detailsView = UIHostingController(rootView: DetailsView())
+        navigationController.pushViewController(detailsView, animated: true)
+    }
+}

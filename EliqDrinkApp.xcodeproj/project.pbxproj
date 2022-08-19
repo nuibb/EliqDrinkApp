@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		8B70F04E28AF880900656C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F04D28AF880900656C48 /* AppDelegate.swift */; };
 		8B70F05028AF880900656C48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F04F28AF880900656C48 /* SceneDelegate.swift */; };
-		8B70F05228AF880900656C48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F05128AF880900656C48 /* ViewController.swift */; };
+		8B70F05228AF880900656C48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F05128AF880900656C48 /* MainViewController.swift */; };
 		8B70F05528AF880900656C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B70F05328AF880900656C48 /* Main.storyboard */; };
 		8B70F05728AF880B00656C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B70F05628AF880B00656C48 /* Assets.xcassets */; };
 		8B70F05A28AF880B00656C48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B70F05828AF880B00656C48 /* LaunchScreen.storyboard */; };
 		8B70F06528AF880B00656C48 /* EliqDrinkAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F06428AF880B00656C48 /* EliqDrinkAppTests.swift */; };
 		8B70F06F28AF880B00656C48 /* EliqDrinkAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F06E28AF880B00656C48 /* EliqDrinkAppUITests.swift */; };
 		8B70F07128AF880B00656C48 /* EliqDrinkAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F07028AF880B00656C48 /* EliqDrinkAppUITestsLaunchTests.swift */; };
+		8B70F07F28AFBA7C00656C48 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F07E28AFBA7C00656C48 /* Coordinator.swift */; };
+		8B70F08128AFC94D00656C48 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F08028AFC94D00656C48 /* Storyboarded.swift */; };
+		8B70F08328AFCDB800656C48 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F08228AFCDB800656C48 /* MainCoordinator.swift */; };
+		8B70F08528AFDB2A00656C48 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F08428AFDB2A00656C48 /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,7 @@
 		8B70F04A28AF880900656C48 /* EliqDrinkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EliqDrinkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B70F04D28AF880900656C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B70F04F28AF880900656C48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B70F05128AF880900656C48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B70F05128AF880900656C48 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8B70F05428AF880900656C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B70F05628AF880B00656C48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B70F05928AF880B00656C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		8B70F06A28AF880B00656C48 /* EliqDrinkAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EliqDrinkAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B70F06E28AF880B00656C48 /* EliqDrinkAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliqDrinkAppUITests.swift; sourceTree = "<group>"; };
 		8B70F07028AF880B00656C48 /* EliqDrinkAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EliqDrinkAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B70F07E28AFBA7C00656C48 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8B70F08028AFC94D00656C48 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		8B70F08228AFCDB800656C48 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		8B70F08428AFDB2A00656C48 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +109,15 @@
 			children = (
 				8B70F04D28AF880900656C48 /* AppDelegate.swift */,
 				8B70F04F28AF880900656C48 /* SceneDelegate.swift */,
-				8B70F05128AF880900656C48 /* ViewController.swift */,
-				8B70F05328AF880900656C48 /* Main.storyboard */,
-				8B70F05628AF880B00656C48 /* Assets.xcassets */,
-				8B70F05828AF880B00656C48 /* LaunchScreen.storyboard */,
+				8B70F07D28AFBA6600656C48 /* Coordinator */,
+				8B70F08B28AFF66C00656C48 /* Model */,
+				8B70F08928AFF64D00656C48 /* View */,
+				8B70F08A28AFF66100656C48 /* ViewModel */,
+				8B70F08828AFF64300656C48 /* Controller */,
+				8B70F08E28AFF71900656C48 /* Protocol */,
+				8B70F08F28AFF73900656C48 /* Extension */,
+				8B70F08C28AFF68E00656C48 /* Misc */,
+				8B70F08D28AFF70100656C48 /* Resources */,
 				8B70F05B28AF880B00656C48 /* Info.plist */,
 			);
 			path = EliqDrinkApp;
@@ -125,6 +138,77 @@
 				8B70F07028AF880B00656C48 /* EliqDrinkAppUITestsLaunchTests.swift */,
 			);
 			path = EliqDrinkAppUITests;
+			sourceTree = "<group>";
+		};
+		8B70F07D28AFBA6600656C48 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8B70F07E28AFBA7C00656C48 /* Coordinator.swift */,
+				8B70F08228AFCDB800656C48 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8B70F08828AFF64300656C48 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B70F05128AF880900656C48 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8B70F08928AFF64D00656C48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B70F08428AFDB2A00656C48 /* DetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B70F08A28AFF66100656C48 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8B70F08B28AFF66C00656C48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B70F08C28AFF68E00656C48 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		8B70F08D28AFF70100656C48 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B70F05328AF880900656C48 /* Main.storyboard */,
+				8B70F05628AF880B00656C48 /* Assets.xcassets */,
+				8B70F05828AF880B00656C48 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8B70F08E28AFF71900656C48 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8B70F08028AFC94D00656C48 /* Storyboarded.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		8B70F08F28AFF73900656C48 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +342,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B70F05228AF880900656C48 /* ViewController.swift in Sources */,
+				8B70F07F28AFBA7C00656C48 /* Coordinator.swift in Sources */,
+				8B70F08528AFDB2A00656C48 /* DetailsView.swift in Sources */,
+				8B70F08328AFCDB800656C48 /* MainCoordinator.swift in Sources */,
+				8B70F05228AF880900656C48 /* MainViewController.swift in Sources */,
+				8B70F08128AFC94D00656C48 /* Storyboarded.swift in Sources */,
 				8B70F04E28AF880900656C48 /* AppDelegate.swift in Sources */,
 				8B70F05028AF880900656C48 /* SceneDelegate.swift in Sources */,
 			);
@@ -442,7 +530,6 @@
 				INFOPLIST_FILE = EliqDrinkApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +557,6 @@
 				INFOPLIST_FILE = EliqDrinkApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
