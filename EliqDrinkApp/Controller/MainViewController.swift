@@ -7,13 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController, Storyboarded {
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func goBtnListener(_ sender: Any) {
+        coordinator?.goToDetailsView()
+    }
+    
 }
 
