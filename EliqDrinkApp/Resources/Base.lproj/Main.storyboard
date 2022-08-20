@@ -31,16 +31,16 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYj-5U-VuQ">
                                                     <rect key="frame" x="20" y="11" width="374" height="278"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lPA-Fc-WyK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="257.5"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lPA-Fc-WyK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="247.5"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6V-0q-hxx">
                                                             <rect key="frame" x="10" y="257.5" width="0.0" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20.5" id="zCt-8o-P3y"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -49,7 +49,7 @@
                                                         <constraint firstItem="lPA-Fc-WyK" firstAttribute="top" secondItem="fYj-5U-VuQ" secondAttribute="top" id="7r1-dm-DAg"/>
                                                         <constraint firstItem="C6V-0q-hxx" firstAttribute="leading" secondItem="fYj-5U-VuQ" secondAttribute="leading" constant="10" id="GPE-la-qEV"/>
                                                         <constraint firstAttribute="trailing" secondItem="lPA-Fc-WyK" secondAttribute="trailing" id="IAk-hI-Ehd"/>
-                                                        <constraint firstItem="C6V-0q-hxx" firstAttribute="top" secondItem="lPA-Fc-WyK" secondAttribute="bottom" id="M71-XO-dnq"/>
+                                                        <constraint firstItem="C6V-0q-hxx" firstAttribute="top" secondItem="lPA-Fc-WyK" secondAttribute="bottom" constant="10" id="M71-XO-dnq"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="C6V-0q-hxx" secondAttribute="trailing" constant="20" symbolic="YES" id="OMe-jN-zTa"/>
                                                         <constraint firstItem="lPA-Fc-WyK" firstAttribute="leading" secondItem="fYj-5U-VuQ" secondAttribute="leading" id="qTn-S7-ehY"/>
                                                         <constraint firstAttribute="bottom" secondItem="C6V-0q-hxx" secondAttribute="bottom" id="uSq-KF-EL6"/>

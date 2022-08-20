@@ -11,7 +11,7 @@ struct Constants {
     
     private init() {}
     
-    static let navigationTitle = "Drink Recipe"
+    static let navigationTitle = "Drinks"
     static let identifierNameForDrinkItemCell = "DrinkItemCell"
     
     static let shareImageTitle = "Share Image"

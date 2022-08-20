@@ -26,8 +26,8 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         navigationController.pushViewController(mainViewController, animated: false)
     }
     
-    func goToDetailsView() {
-        let detailsView = UIHostingController(rootView: DetailsView())
+    func goToDetailsView(id: Int) {
+        let detailsView = UIHostingController(rootView: DetailsView(drinkId: id))
         navigationController.pushViewController(detailsView, animated: true)
     }
 }

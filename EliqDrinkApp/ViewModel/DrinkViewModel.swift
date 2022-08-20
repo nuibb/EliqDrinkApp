@@ -12,15 +12,15 @@ struct DrinkViewModel: Identifiable {
     private let drink: Drink
     
     var id: Int {
-        return Int(drink.idDrink ?? "0")!
+        return Int(self.drink.idDrink ?? "0")!
     }
     
     var title: String {
-        return drink.strDrink ?? ""
+        return self.drink.strDrink ?? ""
     }
     
     var thumbUrl: String {
-        return drink.strDrinkThumb ?? ""
+        return self.drink.strDrinkThumb ?? ""
     }
     
     init(drink: Drink) {
