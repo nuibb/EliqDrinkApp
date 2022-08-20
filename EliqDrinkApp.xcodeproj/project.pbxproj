@@ -22,9 +22,17 @@
 		8B70F08528AFDB2A00656C48 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F08428AFDB2A00656C48 /* DetailsView.swift */; };
 		8B70F09128B0075E00656C48 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F09028B0075E00656C48 /* Constants.swift */; };
 		8B70F09328B00FAD00656C48 /* DrinkItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F09228B00FAD00656C48 /* DrinkItemCell.swift */; };
-		8B70F09528B01F3F00656C48 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F09428B01F3F00656C48 /* Drink.swift */; };
 		8B70F09728B0219F00656C48 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F09628B0219F00656C48 /* Drinks.swift */; };
 		8B70F09A28B02E2F00656C48 /* DrinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F09928B02E2F00656C48 /* DrinkViewModel.swift */; };
+		8BD7C3D928B0669C00F0D8CD /* ApiFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3D828B0669C00F0D8CD /* ApiFetcher.swift */; };
+		8BD7C3DB28B066F500F0D8CD /* ApiFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3DA28B066F500F0D8CD /* ApiFetchable.swift */; };
+		8BD7C3DD28B067F600F0D8CD /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3DC28B067F600F0D8CD /* ApiError.swift */; };
+		8BD7C3DF28B0686800F0D8CD /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3DE28B0686800F0D8CD /* BundleExtension.swift */; };
+		8BD7C3E128B0696700F0D8CD /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3E028B0696700F0D8CD /* Parsing.swift */; };
+		8BD7C3E328B06D7600F0D8CD /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3E228B06D7600F0D8CD /* EndPoint.swift */; };
+		8BD7C3E528B0728200F0D8CD /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3E428B0728200F0D8CD /* ApiService.swift */; };
+		8BD7C3E728B073E000F0D8CD /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3E628B073E000F0D8CD /* NetworkMonitor.swift */; };
+		8BD7C3E928B127F500F0D8CD /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3E828B127F500F0D8CD /* ImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +72,17 @@
 		8B70F08428AFDB2A00656C48 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		8B70F09028B0075E00656C48 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8B70F09228B00FAD00656C48 /* DrinkItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkItemCell.swift; sourceTree = "<group>"; };
-		8B70F09428B01F3F00656C48 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		8B70F09628B0219F00656C48 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
 		8B70F09928B02E2F00656C48 /* DrinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewModel.swift; sourceTree = "<group>"; };
+		8BD7C3D828B0669C00F0D8CD /* ApiFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFetcher.swift; sourceTree = "<group>"; };
+		8BD7C3DA28B066F500F0D8CD /* ApiFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFetchable.swift; sourceTree = "<group>"; };
+		8BD7C3DC28B067F600F0D8CD /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		8BD7C3DE28B0686800F0D8CD /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		8BD7C3E028B0696700F0D8CD /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
+		8BD7C3E228B06D7600F0D8CD /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		8BD7C3E428B0728200F0D8CD /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		8BD7C3E628B073E000F0D8CD /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		8BD7C3E828B127F500F0D8CD /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +133,9 @@
 		8B70F04C28AF880900656C48 /* EliqDrinkApp */ = {
 			isa = PBXGroup;
 			children = (
-				8B70F09828B02E0700656C48 /* API */,
 				8B70F04D28AF880900656C48 /* AppDelegate.swift */,
 				8B70F04F28AF880900656C48 /* SceneDelegate.swift */,
+				8B70F09828B02E0700656C48 /* API */,
 				8B70F07D28AFBA6600656C48 /* Coordinator */,
 				8B70F08B28AFF66C00656C48 /* Model */,
 				8B70F08928AFF64D00656C48 /* View */,
@@ -188,7 +204,6 @@
 		8B70F08B28AFF66C00656C48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8B70F09428B01F3F00656C48 /* Drink.swift */,
 				8B70F09628B0219F00656C48 /* Drinks.swift */,
 			);
 			path = Model;
@@ -198,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				8B70F09028B0075E00656C48 /* Constants.swift */,
+				8BD7C3E628B073E000F0D8CD /* NetworkMonitor.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -216,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				8B70F08028AFC94D00656C48 /* Storyboarded.swift */,
+				8BD7C3DA28B066F500F0D8CD /* ApiFetchable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -223,6 +240,8 @@
 		8B70F08F28AFF73900656C48 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8BD7C3DE28B0686800F0D8CD /* BundleExtension.swift */,
+				8BD7C3E828B127F500F0D8CD /* ImageViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -230,6 +249,11 @@
 		8B70F09828B02E0700656C48 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				8BD7C3E028B0696700F0D8CD /* Parsing.swift */,
+				8BD7C3DC28B067F600F0D8CD /* ApiError.swift */,
+				8BD7C3E228B06D7600F0D8CD /* EndPoint.swift */,
+				8BD7C3D828B0669C00F0D8CD /* ApiFetcher.swift */,
+				8BD7C3E428B0728200F0D8CD /* ApiService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -366,16 +390,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B70F09328B00FAD00656C48 /* DrinkItemCell.swift in Sources */,
+				8BD7C3DB28B066F500F0D8CD /* ApiFetchable.swift in Sources */,
+				8BD7C3E928B127F500F0D8CD /* ImageViewExtension.swift in Sources */,
 				8B70F07F28AFBA7C00656C48 /* Coordinator.swift in Sources */,
 				8B70F08528AFDB2A00656C48 /* DetailsView.swift in Sources */,
 				8B70F09728B0219F00656C48 /* Drinks.swift in Sources */,
+				8BD7C3E328B06D7600F0D8CD /* EndPoint.swift in Sources */,
 				8B70F08328AFCDB800656C48 /* MainCoordinator.swift in Sources */,
 				8B70F05228AF880900656C48 /* MainViewController.swift in Sources */,
+				8BD7C3DF28B0686800F0D8CD /* BundleExtension.swift in Sources */,
 				8B70F08128AFC94D00656C48 /* Storyboarded.swift in Sources */,
+				8BD7C3DD28B067F600F0D8CD /* ApiError.swift in Sources */,
 				8B70F09A28B02E2F00656C48 /* DrinkViewModel.swift in Sources */,
+				8BD7C3D928B0669C00F0D8CD /* ApiFetcher.swift in Sources */,
 				8B70F04E28AF880900656C48 /* AppDelegate.swift in Sources */,
+				8BD7C3E528B0728200F0D8CD /* ApiService.swift in Sources */,
 				8B70F05028AF880900656C48 /* SceneDelegate.swift in Sources */,
-				8B70F09528B01F3F00656C48 /* Drink.swift in Sources */,
+				8BD7C3E128B0696700F0D8CD /* Parsing.swift in Sources */,
+				8BD7C3E728B073E000F0D8CD /* NetworkMonitor.swift in Sources */,
 				8B70F09128B0075E00656C48 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +592,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -587,6 +620,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
