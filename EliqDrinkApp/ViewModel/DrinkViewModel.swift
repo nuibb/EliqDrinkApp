@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct DrinkViewModel: Identifiable {
     private let drink: Drink

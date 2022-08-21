@@ -8,19 +8,31 @@
 import SwiftUI
 
 struct DetailsView: View {
-    var drinkId: Int
     
-    init(drinkId: Int) {
-        self.drinkId = drinkId
+    // MARK: - PROPERTIES
+    private let viewModel: DetailsViewModel
+    
+    init(viewModel: DetailsViewModel) {
+        self.viewModel = viewModel
     }
     
+    // MARK: - BODY
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color(.systemTeal)
+                .ignoresSafeArea()
+            ScrollView(.vertical, showsIndicators: false) {
+                DetailsContentView(viewModel: self.viewModel)
+                    .animation(.spring(response: 1.5), value: true)
+            }
+            .navigationTitle(Constants.navigationDetailsTitle)
+        }
     }
 }
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(drinkId: 1)
+        let viewModel = DetailsViewModel(drinkId: 0)
+        DetailsView(viewModel: viewModel)
     }
 }

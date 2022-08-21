@@ -12,11 +12,10 @@ struct Constants {
     private init() {}
     
     static let navigationTitle = "Drinks"
+    static let navigationDetailsTitle = "Recipe & Ingredients"
     static let identifierNameForDrinkItemCell = "DrinkItemCell"
-    
-    static let shareImageTitle = "Share Image"
     static let failedPhaseIcon = "ant.circle.fill"
     static let emptyPhaseIcon = "photo.circle.fill"
-    static let pathForLocalJsonData = "photos.json"
     static let invalidUrlMessage = "Couldn't create URL"
+    //static let pathForLocalJsonData = "photos.json"
 }
