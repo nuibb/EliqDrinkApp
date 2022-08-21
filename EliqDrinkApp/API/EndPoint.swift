@@ -8,6 +8,7 @@
 import Foundation
 
 //https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic
+//https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=15423
 
 enum EndPoint {
     static let scheme = "https"

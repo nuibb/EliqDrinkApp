@@ -30,6 +30,7 @@ class MainViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.tableView.rowHeight = 300;
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         self.cancellable = self.apiService.$dataSource.sink { response in
             self.fetchedResults = response
         }

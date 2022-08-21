@@ -14,12 +14,15 @@ class DrinkItemCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.drinkImage.layer.borderColor = UIColor.white.cgColor
+        self.drinkImage.layer.masksToBounds = true
+        self.drinkImage.layer.borderWidth = 2
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
