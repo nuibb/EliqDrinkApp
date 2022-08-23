@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailsView: View {
     
     // MARK: - PROPERTIES
-    private let viewModel: DetailsViewModel
+    @ObservedObject var viewModel: DetailsViewModel
     
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
@@ -27,12 +27,16 @@ struct DetailsView: View {
             }
             .navigationTitle(Constants.navigationDetailsTitle)
         }
+        .task {
+            await viewModel.fetchDrinkdetailsData()
+        }
     }
 }
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = DetailsViewModel(drinkId: 0)
+        let apiService = ApiService(apiFetcher: ApiFetcher(), networkMonitor: NetworkMonitor.shared)
+        let viewModel = DetailsViewModel(drinkId: 15423, apiService: apiService)
         DetailsView(viewModel: viewModel)
     }
 }

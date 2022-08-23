@@ -13,6 +13,7 @@ enum ApiError: Error {
     case invalidImage
     case invalidURL(description: String)
     case network(description: String)
+    case offline
     case other(Error)
     
     static func map(_ error: Error) -> ApiError {

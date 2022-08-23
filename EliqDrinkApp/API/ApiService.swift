@@ -15,20 +15,19 @@ import Combine
     private let apiFetcher: ApiFetchable
     private let networkMonitor: NetworkMonitor
     private var disposables = Set<AnyCancellable>()
-    //private let networkManager = NetworkManager.shared
-    //private let networkMonitor = NetworkMonitor.shared
     
-    //Dependancy Injection
     init(apiFetcher: ApiFetchable, networkMonitor: NetworkMonitor) {
         self.apiFetcher = apiFetcher
         self.networkMonitor = networkMonitor
         if self.networkMonitor.isReachable {
             self.getAllDrinks()
         } else {
-            //From DB
+            // MARK: Get data from local database while offline
+            print("Offline")
         }
     }
     
+    // MARK: Fetching data using Combine Framework - reactive approach
     func getAllDrinks() {
         apiFetcher.fetchDrinks()
             .map { response in
@@ -49,9 +48,24 @@ import Combine
                 receiveValue: { [weak self] drinkViewModels in
                     guard let self = self else { return }
                     self.dataSource.append(contentsOf: drinkViewModels)
+                    //print(self.dataSource.count)
+                    
+                    // MARK: Save data for offline support
+                    self.saveDataIntoLocalDatabase()
                 })
             .store(in: &disposables)
     }
     
+    // MARK: Fetching data using Swift's modern concurrency
+    func fetchDrinkDetails(drinkId: Int) async -> Result<DetailsList, ApiError> {
+        if self.networkMonitor.isReachable {
+            return await apiFetcher.fetchDrinkDetails(drinkId: drinkId)
+        }
+        return .failure(ApiError.offline)
+    }
     
+    // MARK: Save Into Local DB
+    func saveDataIntoLocalDatabase() {
+        
+    }
 }

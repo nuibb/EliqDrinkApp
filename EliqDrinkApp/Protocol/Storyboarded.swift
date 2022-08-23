@@ -14,10 +14,10 @@ protocol Storyboarded {
 
 extension Storyboarded where Self: UIViewController {
     static func instantiate() -> Self {
-        // this pulls out "MyApp.MyViewController"
+        // this pulls out "EliqDrinkApp.MainViewController"
         let fullName = NSStringFromClass(self)
 
-        // this splits by the dot and uses everything after, giving "MyViewController"
+        // this splits by the dot and uses everything after, giving "MainViewController"
         let className = fullName.components(separatedBy: ".")[1]
 
         // load our storyboard

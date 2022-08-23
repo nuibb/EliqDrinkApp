@@ -20,8 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // create the main navigation controller to be used for our app
             let navController = UINavigationController()
             
+            // MARK: For Dependancy Injection
+            let apiService: ApiService = ApiService(apiFetcher: ApiFetcher(), networkMonitor: NetworkMonitor.shared)
+            
             // send that into our coordinator so that it can display view controllers
-            coordinator = MainCoordinator(navigationController: navController)
+            coordinator = MainCoordinator(navigationController: navController, apiService: apiService)
             
             // tell the coordinator to take over control
             coordinator?.start()

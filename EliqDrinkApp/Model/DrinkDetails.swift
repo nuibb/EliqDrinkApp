@@ -7,69 +7,77 @@
 
 import Foundation
 
-struct DetailList : Decodable {
-    let detailList : [DrinkDetails]?
+struct DetailsList : Decodable {
+    let objects : [DrinkDetails]?
 
     enum CodingKeys: String, CodingKey {
-        case detailList = "drinks"
+        case objects = "drinks"
     }
-
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        detailList = try values.decodeIfPresent([DrinkDetails].self, forKey: .detailList)
+        objects = try values.decodeIfPresent([DrinkDetails].self, forKey: .objects)
     }
 }
 
 struct DrinkDetails : Decodable {
     let idDrink : String?
     let strDrink : String?
-    let strDrinkAlternate : String?
-    let strTags : String?
-    let strVideo : String?
+    var strDrinkAlternate : String?
+    var strTags : String?
+    var strVideo : String?
     let strCategory : String?
-    let strIBA : String?
-    let strAlcoholic : String?
-    let strGlass : String?
+    var strIBA : String?
+    var strAlcoholic : String?
+    var strGlass : String?
     let strInstructions : String?
-    let strInstructionsES : String?
-    let strInstructionsDE : String?
-    let strInstructionsFR : String?
-    let strInstructionsIT : String?
-    let strDrinkThumb : String?
-    let strIngredient1 : String?
-    let strIngredient2 : String?
-    let strIngredient3 : String?
-    let strIngredient4 : String?
-    let strIngredient5 : String?
-    let strIngredient6 : String?
-    let strIngredient7 : String?
-    let strIngredient8 : String?
-    let strIngredient9 : String?
-    let strIngredient10 : String?
-    let strIngredient11 : String?
-    let strIngredient12 : String?
-    let strIngredient13 : String?
-    let strIngredient14 : String?
-    let strIngredient15 : String?
-    let strMeasure1 : String?
-    let strMeasure2 : String?
-    let strMeasure3 : String?
-    let strMeasure4 : String?
-    let strMeasure5 : String?
-    let strMeasure6 : String?
-    let strMeasure7 : String?
-    let strMeasure8 : String?
-    let strMeasure9 : String?
-    let strMeasure10 : String?
-    let strMeasure11 : String?
-    let strMeasure12 : String?
-    let strMeasure13 : String?
-    let strMeasure14 : String?
-    let strMeasure15 : String?
-    let strImageSource : String?
-    let strImageAttribution : String?
-    let strCreativeCommonsConfirmed : String?
-    let dateModified : String?
+    var strInstructionsES : String?
+    var strInstructionsDE : String?
+    var strInstructionsFR : String?
+    var strInstructionsIT : String?
+    var strDrinkThumb : String?
+    var strIngredient1 : String?
+    var strIngredient2 : String?
+    var strIngredient3 : String?
+    var strIngredient4 : String?
+    var strIngredient5 : String?
+    var strIngredient6 : String?
+    var strIngredient7 : String?
+    var strIngredient8 : String?
+    var strIngredient9 : String?
+    var strIngredient10 : String?
+    var strIngredient11 : String?
+    var strIngredient12 : String?
+    var strIngredient13 : String?
+    var strIngredient14 : String?
+    var strIngredient15 : String?
+    var strMeasure1 : String?
+    var strMeasure2 : String?
+    var strMeasure3 : String?
+    var strMeasure4 : String?
+    var strMeasure5 : String?
+    var strMeasure6 : String?
+    var strMeasure7 : String?
+    var strMeasure8 : String?
+    var strMeasure9 : String?
+    var strMeasure10 : String?
+    var strMeasure11 : String?
+    var strMeasure12 : String?
+    var strMeasure13 : String?
+    var strMeasure14 : String?
+    var strMeasure15 : String?
+    var strImageSource : String?
+    var strImageAttribution : String?
+    var strCreativeCommonsConfirmed : String?
+    var dateModified : String?
+    
+    init(idDrink: String, strDrink: String, strCategory: String, strInstructions: String, strDrinkThumb: String) {
+        self.idDrink = idDrink
+        self.strDrink = strDrink
+        self.strCategory = strCategory
+        self.strInstructions = strInstructions
+        self.strDrinkThumb = strDrinkThumb
+    }
 
     enum CodingKeys: String, CodingKey {
 
