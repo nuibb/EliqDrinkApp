@@ -28,6 +28,7 @@
 		8B70F09328B00FAD00656C48 /* DrinkItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F09228B00FAD00656C48 /* DrinkItemCell.swift */; };
 		8B70F09728B0219F00656C48 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F09628B0219F00656C48 /* Drinks.swift */; };
 		8B70F09A28B02E2F00656C48 /* DrinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70F09928B02E2F00656C48 /* DrinkViewModel.swift */; };
+		8B836E1328B3922F0074DBC3 /* PropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B836E1228B3922F0074DBC3 /* PropertyList.swift */; };
 		8BD7C3D928B0669C00F0D8CD /* ApiFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3D828B0669C00F0D8CD /* ApiFetcher.swift */; };
 		8BD7C3DB28B066F500F0D8CD /* ApiFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3DA28B066F500F0D8CD /* ApiFetchable.swift */; };
 		8BD7C3DD28B067F600F0D8CD /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3DC28B067F600F0D8CD /* ApiError.swift */; };
@@ -40,6 +41,7 @@
 		8BD7C3EB28B1359000F0D8CD /* DrinkDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3EA28B1359000F0D8CD /* DrinkDetails.swift */; };
 		8BD7C3ED28B1586100F0D8CD /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3EC28B1586100F0D8CD /* ActivityViewController.swift */; };
 		8BD7C3EF28B158E200F0D8CD /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3EE28B158E200F0D8CD /* ImageExtension.swift */; };
+		8BDEA89128B47A3F008A92E7 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEA89028B47A3F008A92E7 /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,7 @@
 		8B70F09228B00FAD00656C48 /* DrinkItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkItemCell.swift; sourceTree = "<group>"; };
 		8B70F09628B0219F00656C48 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
 		8B70F09928B02E2F00656C48 /* DrinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewModel.swift; sourceTree = "<group>"; };
+		8B836E1228B3922F0074DBC3 /* PropertyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyList.swift; sourceTree = "<group>"; };
 		8BD7C3D828B0669C00F0D8CD /* ApiFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFetcher.swift; sourceTree = "<group>"; };
 		8BD7C3DA28B066F500F0D8CD /* ApiFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiFetchable.swift; sourceTree = "<group>"; };
 		8BD7C3DC28B067F600F0D8CD /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 		8BD7C3EA28B1359000F0D8CD /* DrinkDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetails.swift; sourceTree = "<group>"; };
 		8BD7C3EC28B1586100F0D8CD /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		8BD7C3EE28B158E200F0D8CD /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		8BDEA89028B47A3F008A92E7 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,7 @@
 			children = (
 				8B70F09628B0219F00656C48 /* Drinks.swift */,
 				8BD7C3EA28B1359000F0D8CD /* DrinkDetails.swift */,
+				8BDEA89028B47A3F008A92E7 /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 		8B70F08F28AFF73900656C48 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8B836E1228B3922F0074DBC3 /* PropertyList.swift */,
 				8B4E7D6B28B1CB2B00E87453 /* TextExtension.swift */,
 				8BD7C3EE28B158E200F0D8CD /* ImageExtension.swift */,
 				8BD7C3DE28B0686800F0D8CD /* BundleExtension.swift */,
@@ -420,6 +426,7 @@
 				8B70F09728B0219F00656C48 /* Drinks.swift in Sources */,
 				8BD7C3E328B06D7600F0D8CD /* EndPoint.swift in Sources */,
 				8BD7C3EB28B1359000F0D8CD /* DrinkDetails.swift in Sources */,
+				8B836E1328B3922F0074DBC3 /* PropertyList.swift in Sources */,
 				8B70F08328AFCDB800656C48 /* MainCoordinator.swift in Sources */,
 				8B70F05228AF880900656C48 /* MainViewController.swift in Sources */,
 				8BD7C3DF28B0686800F0D8CD /* BundleExtension.swift in Sources */,
@@ -432,6 +439,7 @@
 				8BD7C3E528B0728200F0D8CD /* ApiService.swift in Sources */,
 				8B70F05028AF880900656C48 /* SceneDelegate.swift in Sources */,
 				8BD7C3E128B0696700F0D8CD /* Parsing.swift in Sources */,
+				8BDEA89128B47A3F008A92E7 /* Recipe.swift in Sources */,
 				8BD7C3E728B073E000F0D8CD /* NetworkMonitor.swift in Sources */,
 				8B70F09128B0075E00656C48 /* Constants.swift in Sources */,
 				8BD7C3EF28B158E200F0D8CD /* ImageExtension.swift in Sources */,

@@ -14,6 +14,7 @@ struct Constants {
     static let navigationTitle = "Drinks"
     static let navigationDetailsTitle = "Recipe & Ingredients"
     static let identifierNameForDrinkItemCell = "DrinkItemCell"
+    static let ingredientMeasurementText = "Ingredient Measurements"
     static let failedPhaseIcon = "ant.circle.fill"
     static let emptyPhaseIcon = "photo.circle.fill"
     static let invalidUrlMessage = "Couldn't create URL"

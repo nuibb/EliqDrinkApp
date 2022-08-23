@@ -12,9 +12,11 @@ import SwiftUI
 class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    var apiService: ApiService
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, apiService: ApiService) {
         self.navigationController = navigationController
+        self.apiService = apiService
     }
     
     func start() {
@@ -27,7 +29,7 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     }
     
     func goToDetailsView(id: Int) {
-        let viewModel = DetailsViewModel(drinkId: id)
+        let viewModel = DetailsViewModel(drinkId:id, apiService: self.apiService)
         let detailsView = UIHostingController(rootView: DetailsView(viewModel: viewModel))
         navigationController.pushViewController(detailsView, animated: true)
     }

@@ -9,12 +9,13 @@ import UIKit
 import Combine
 
 class MainViewController: UIViewController, Storyboarded {
+
     @IBOutlet weak var tableView: UITableView!
     
     private var cancellable: AnyCancellable!
     private var drinks = [DrinkViewModel]()
     weak var coordinator: MainCoordinator?
-    private let apiService = ApiService(apiFetcher: ApiFetcher(), networkMonitor: NetworkMonitor.shared)
+    let apiService = ApiService(apiFetcher: ApiFetcher(), networkMonitor: NetworkMonitor.shared)
     
     var fetchedResults: [DrinkViewModel]? {
         didSet {
@@ -31,6 +32,8 @@ class MainViewController: UIViewController, Storyboarded {
         // Do any additional setup after loading the view.
         self.tableView.rowHeight = 300;
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        // MARK: Call API Services
         self.cancellable = self.apiService.$dataSource.sink { response in
             self.fetchedResults = response
         }

@@ -10,11 +10,12 @@ import SwiftUI
 struct DetailsContentView: View {
     
     // MARK: - PROPERTIES
-    private let viewModel: DetailsViewModel
-    //@State var items: [Any] = []
+    @ObservedObject var viewModel: DetailsViewModel
+    //@State var recipes: [Recipe]
     
     init(viewModel: DetailsViewModel) {
         self.viewModel = viewModel
+        //self.recipes = [Recipe(id: 1, ingredient: "dd", measure: "gg")]
     }
     
     // MARK: - BODY
@@ -32,12 +33,21 @@ struct DetailsContentView: View {
                     ProgressView()
                 }
             }
-            Text("Penicillin")
+            Text(viewModel.category)
                 .headerTextModifier()
-            Text("Penicillin Description details here! Penicillin Description details here! Penicillin Description details here! Penicillin Description details here! Penicillin Description details here!")
-                .descriptionTextModifier()
-            Text("Penicillin")
+                .padding()
+            Text(viewModel.title)
                 .itemTextModifier()
+            Text(viewModel.instruction)
+                .descriptionTextModifier()
+            Text(viewModel.ingredientMeasurementTitle)
+                .itemTextModifier()
+                .padding(.top, 10)
+                .padding(.bottom, 10)
+            ForEach(viewModel.recipes.indices, id:\.self) { index in // show received results
+                Text("\(viewModel.recipes[index].ingredient) : \(viewModel.recipes[index].measure)")
+                    .descriptionTextModifier()
+            }
         }
         .padding(40)
     }
@@ -45,7 +55,8 @@ struct DetailsContentView: View {
 
 struct DetailsContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = DetailsViewModel(drinkId: 0)
+        let apiService = ApiService(apiFetcher: ApiFetcher(), networkMonitor: NetworkMonitor.shared)
+        let viewModel = DetailsViewModel(drinkId: 0, apiService: apiService)
         DetailsContentView(viewModel: viewModel)
     }
 }

@@ -10,5 +10,6 @@ import Combine
 
 protocol ApiFetchable {
     func fetchDrinks() -> AnyPublisher<Drinks, ApiError>
+    func fetchDrinkDetails(drinkId: Int) async -> Result<DetailsList, ApiError>
 }
 
