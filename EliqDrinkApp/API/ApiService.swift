@@ -48,7 +48,6 @@ import Combine
                 receiveValue: { [weak self] drinkViewModels in
                     guard let self = self else { return }
                     self.dataSource.append(contentsOf: drinkViewModels)
-                    //print(self.dataSource.count)
                     
                     // MARK: Save data for offline support
                     self.saveDataIntoLocalDatabase()

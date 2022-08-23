@@ -7,29 +7,47 @@
 
 import XCTest
 @testable import EliqDrinkApp
+import Combine
 
 class EliqDrinkAppTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    func test_UnsplashApiResource_With_ValidRequest_Returns_ValidResponse() {
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        // ARRANGE
+        var dataSource: [DrinkViewModel] = []
+        var disposables = Set<AnyCancellable>()
+        let fetcher = ApiFetcher()
+        let expectation = self.expectation(description: "ValidRequest_Returns_ValidResponse")
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        var drinks = [DrinkViewModel]()
-        drinks.append(DrinkViewModel(drink: Drink(idDrink: "2", strDrink:"cheetah", strDrinkThumb: "cheetah")))
-        drinks.append(DrinkViewModel(drink: Drink(idDrink: "2", strDrink:"zebra", strDrinkThumb: "zebra")))
-        drinks.append(DrinkViewModel(drink: Drink(idDrink: "2", strDrink:"cheetah", strDrinkThumb: "cheetah")))
-        drinks.append(DrinkViewModel(drink: Drink(idDrink: "2", strDrink:"zebra", strDrinkThumb: "zebra")))
-        drinks.append(DrinkViewModel(drink: Drink(idDrink: "2", strDrink:"cheetah", strDrinkThumb: "cheetah")))
+        // ACT
+        fetcher.fetchDrinks()
+            .map { response in
+                response.allDrinks.map(DrinkViewModel.init)
+            }
+            .receive(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { [weak self] value in
+                    guard self != nil else { return }
+                    switch value {
+                    case .failure(let error):
+                        dataSource = []
+                        print("Error: \(error.localizedDescription)")
+                    case .finished:
+                        break
+                    }
+                },
+                receiveValue: { [weak self] drinkViewModels in
+                    guard self != nil else { return }
+                    dataSource.append(contentsOf: drinkViewModels)
+                    
+                    // ASSERT
+                    XCTAssertNotNil(dataSource)
+                    XCTAssertNotEqual(0, dataSource.count)
+                    expectation.fulfill()
+                })
+            .store(in: &disposables)
+        
+        waitForExpectations(timeout: 5, handler: nil)
     }
 
     func testPerformanceExample() throws {
