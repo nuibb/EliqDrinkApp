@@ -10,6 +10,7 @@ import Combine
 
 class MainViewController: UIViewController, Storyboarded {
 
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
     private var cancellable: AnyCancellable!
@@ -31,11 +32,16 @@ class MainViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.tableView.rowHeight = 300;
+        self.spinner.hidesWhenStopped = true
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        // MARK: Start animating spinner
+        self.spinner.startAnimating()
         
         // MARK: Call API Services
         self.cancellable = self.apiService.$dataSource.sink { response in
             self.fetchedResults = response
+            self.spinner.stopAnimating()
         }
     }
 }
@@ -50,6 +56,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.identifierNameForDrinkItemCell, for: indexPath) as! DrinkItemCell
         let drink = self.drinks[indexPath.row] as DrinkViewModel
         cell.drinkImage.load(url: URL(string: drink.thumbUrl)!)
+        cell.drinkImage.layer.borderColor = UIColor.white.cgColor
+        cell.drinkImage.layer.masksToBounds = true
+        cell.drinkImage.layer.borderWidth = 2
         cell.label.text = drink.title
         return cell
     }
