@@ -7,36 +7,142 @@
 
 import XCTest
 @testable import EliqDrinkApp
+import Combine
 
 class EliqDrinkAppTests: XCTestCase {
-
+    var sut: URLSession!
+    let networkMonitor = NetworkMonitor.shared
+    var apiService: MockApiService!
+    var mockApiProvider: MockAPIProvider!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        sut = URLSession(configuration: .default)
+        apiService = MockApiService()
+        mockApiProvider = MockAPIProvider()
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        try super.tearDownWithError()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        var drinks = [DrinkViewModel]()
-        drinks.append(DrinkViewModel(drink: Drink(idDrink: "2", strDrink:"cheetah", strDrinkThumb: "cheetah")))
-        drinks.append(DrinkViewModel(drink: Drink(idDrink: "2", strDrink:"zebra", strDrinkThumb: "zebra")))
-        drinks.append(DrinkViewModel(drink: Drink(idDrink: "2", strDrink:"cheetah", strDrinkThumb: "cheetah")))
-        drinks.append(DrinkViewModel(drink: Drink(idDrink: "2", strDrink:"zebra", strDrinkThumb: "zebra")))
-        drinks.append(DrinkViewModel(drink: Drink(idDrink: "2", strDrink:"cheetah", strDrinkThumb: "cheetah")))
+    
+    func test_Mapping_Data_With_ValidRequest_Returns_ValidResponse() throws {
+        try XCTSkipUnless(
+            networkMonitor.isReachable,
+            "Network connectivity needed for this test."
+        )
+        
+        // ARRANGE
+        var dataSource: [DrinkViewModel] = []
+        var disposables = Set<AnyCancellable>()
+        let fetcher = ApiFetcher()
+        let expectation = self.expectation(description: "ValidRequest_Returns_ValidResponse")
+        
+        // ACT
+        fetcher.fetchDrinks()
+            .map { response in
+                response.allDrinks.map(DrinkViewModel.init)
+            }
+            .receive(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { [weak self] value in
+                    guard self != nil else { return }
+                    switch value {
+                    case .failure(let error):
+                        dataSource = []
+                        print("Error: \(error.localizedDescription)")
+                    case .finished:
+                        break
+                    }
+                },
+                receiveValue: { [weak self] drinkViewModels in
+                    guard self != nil else { return }
+                    dataSource.append(contentsOf: drinkViewModels)
+                    
+                    // ASSERT
+                    XCTAssertNotNil(dataSource)
+                    XCTAssertNotEqual(0, dataSource.count)
+                    expectation.fulfill()
+                })
+            .store(in: &disposables)
+        
+        waitForExpectations(timeout: 5, handler: nil)
     }
+    
+    
+    func test_Mock_Data_With_ValidRequest_Returns_ValidResponse() throws {
+        try XCTSkipUnless(
+            networkMonitor.isReachable,
+            "Network connectivity needed for this test."
+        )
+        
+        let url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic"
+        
+        // ARRANGE
+        var disposables = Set<AnyCancellable>()
+        let expectation = self.expectation(description: "ValidRequest_Returns_ValidResponse")
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        // ACT
+        let res = mockApiProvider.apiResponse(for: URLRequest(url: URL(string: url)!))
+        res.sink(
+            receiveCompletion: { [weak self] value in
+                guard self != nil else { return }
+                switch value {
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                case .finished:
+                    break
+                }
+            },
+            receiveValue: { [weak self] res in
+                guard self != nil else { return }
+                print(res.data)
+                // ASSERT
+                XCTAssertNotNil(res)
+                expectation.fulfill()
+            })
+        .store(in: &disposables)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func fetch_data_with_success_mock_api_call() {
+
+        // given
+        let drinks: Drinks = Bundle.main.decode("drinks.json")
+        apiService.fetchedResults = CurrentValueSubject(drinks).eraseToAnyPublisher()
+        
+        // ASSERT
+        XCTAssertNotNil(apiService.fetchDrinks)
+
+    }
+}
+
+class MockApiService: ApiFetchable {
+    
+    var fetchedResults: AnyPublisher<Drinks, ApiError>?
+    
+    func fetchDrinks() -> AnyPublisher<Drinks, ApiError> {
+        if let result = fetchedResults {
+            return result
+        } else {
+            fatalError(ApiError.decoding(description: "Result must not be nil!").localizedDescription)
         }
     }
+    
+    func fetchDrinkDetails(drinkId: Int) async -> Result<DetailsList, ApiError> {
+        fatalError(ApiError.decoding(description: "Result must not be nil!").localizedDescription)
+    }
 
+}
+
+struct MockAPIProvider: APIProvider {
+    func apiResponse(for request: URLRequest) -> AnyPublisher<APIResponse, URLError> {
+        let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: nil)!
+        let data = "Hello, world!".data(using: .utf8)!
+        return Just((data: data, response: response))
+            .setFailureType(to: URLError.self)
+            .eraseToAnyPublisher()
+    }
 }
