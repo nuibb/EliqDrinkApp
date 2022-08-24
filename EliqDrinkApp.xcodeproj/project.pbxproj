@@ -41,6 +41,8 @@
 		8BD7C3EB28B1359000F0D8CD /* DrinkDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3EA28B1359000F0D8CD /* DrinkDetails.swift */; };
 		8BD7C3EF28B158E200F0D8CD /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD7C3EE28B158E200F0D8CD /* ImageExtension.swift */; };
 		8BDEA89128B47A3F008A92E7 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEA89028B47A3F008A92E7 /* Recipe.swift */; };
+		8BE2397C28B5D92E00039C41 /* drinks.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BE2397B28B5D92E00039C41 /* drinks.json */; };
+		8BE2398028B60BA400039C41 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE2397F28B60BA400039C41 /* ApiProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		8BD7C3EA28B1359000F0D8CD /* DrinkDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetails.swift; sourceTree = "<group>"; };
 		8BD7C3EE28B158E200F0D8CD /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		8BDEA89028B47A3F008A92E7 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		8BE2397B28B5D92E00039C41 /* drinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinks.json; sourceTree = "<group>"; };
+		8BE2397F28B60BA400039C41 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 				8B70F08F28AFF73900656C48 /* Extension */,
 				8B70F08C28AFF68E00656C48 /* Misc */,
 				8B70F08D28AFF70100656C48 /* Resources */,
+				8BE2397A28B5D92000039C41 /* Data */,
 				8B70F05B28AF880B00656C48 /* Info.plist */,
 			);
 			path = EliqDrinkApp;
@@ -253,6 +258,7 @@
 			children = (
 				8B70F08028AFC94D00656C48 /* Storyboarded.swift */,
 				8BD7C3DA28B066F500F0D8CD /* ApiFetchable.swift */,
+				8BE2397F28B60BA400039C41 /* ApiProvider.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -280,6 +286,14 @@
 				8BD7C3E428B0728200F0D8CD /* ApiService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		8BE2397A28B5D92000039C41 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8BE2397B28B5D92E00039C41 /* drinks.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +402,7 @@
 			files = (
 				8B70F05A28AF880B00656C48 /* LaunchScreen.storyboard in Resources */,
 				8B70F05728AF880B00656C48 /* Assets.xcassets in Resources */,
+				8BE2397C28B5D92E00039C41 /* drinks.json in Resources */,
 				8B70F05528AF880900656C48 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +450,7 @@
 				8B70F04E28AF880900656C48 /* AppDelegate.swift in Sources */,
 				8BD7C3E528B0728200F0D8CD /* ApiService.swift in Sources */,
 				8B70F05028AF880900656C48 /* SceneDelegate.swift in Sources */,
+				8BE2398028B60BA400039C41 /* ApiProvider.swift in Sources */,
 				8BD7C3E128B0696700F0D8CD /* Parsing.swift in Sources */,
 				8BDEA89128B47A3F008A92E7 /* Recipe.swift in Sources */,
 				8BD7C3E728B073E000F0D8CD /* NetworkMonitor.swift in Sources */,

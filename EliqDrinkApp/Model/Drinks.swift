@@ -7,16 +7,17 @@
 
 import Foundation
 
-struct Drinks : Decodable {
+struct Drinks : Codable {
+    
     let allDrinks : [Drink]
 
     enum CodingKeys: String, CodingKey {
-        case drinks = "drinks"
+        case allDrinks = "drinks"
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        allDrinks = try values.decodeIfPresent([Drink].self, forKey: .drinks) ?? []
+        allDrinks = try values.decodeIfPresent([Drink].self, forKey: .allDrinks) ?? []
     }
 }
 
