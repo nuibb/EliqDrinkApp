@@ -27,7 +27,7 @@ class EliqDrinkAppTests: XCTestCase {
         try super.tearDownWithError()
     }
     
-    func test_Mapping_Data_With_ValidRequest_Returns_ValidResponse() throws {
+    func test_Mapping_Response_Data_With_ValidRequest_Returns_ValidResponse() throws {
         try XCTSkipUnless(
             networkMonitor.isReachable,
             "Network connectivity needed for this test."
@@ -72,10 +72,6 @@ class EliqDrinkAppTests: XCTestCase {
     
     
     func test_Mock_Data_With_ValidRequest_Returns_ValidResponse() throws {
-        try XCTSkipUnless(
-            networkMonitor.isReachable,
-            "Network connectivity needed for this test."
-        )
         
         let url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic"
         
@@ -95,11 +91,12 @@ class EliqDrinkAppTests: XCTestCase {
                     break
                 }
             },
-            receiveValue: { [weak self] res in
+            receiveValue: { [weak self] result in
                 guard self != nil else { return }
-                print(res.data)
                 // ASSERT
-                XCTAssertNotNil(res)
+                XCTAssertNotNil(result)
+                XCTAssertEqual((result.response as? HTTPURLResponse)?.statusCode, 200)
+                XCTAssertEqual(String(decoding: result.data, as: UTF8.self), "Hello, world!")
                 expectation.fulfill()
             })
         .store(in: &disposables)
@@ -107,14 +104,17 @@ class EliqDrinkAppTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func fetch_data_with_success_mock_api_call() {
-
+    func fetch_data_with_success_mock_api_call() throws {
         // given
+       // var disposables = Set<AnyCancellable>()
+        let expectation = self.expectation(description: "ValidRequest_Returns_ValidResponse")
         let drinks: Drinks = Bundle.main.decode("drinks.json")
-        apiService.fetchedResults = CurrentValueSubject(drinks).eraseToAnyPublisher()
+        apiService.fetchedResults = CurrentValueSubject<Drinks, ApiError>(drinks).eraseToAnyPublisher()
         
         // ASSERT
         XCTAssertNotNil(apiService.fetchDrinks)
+        expectation.fulfill()
+        waitForExpectations(timeout: 5, handler: nil)
 
     }
 }
@@ -146,3 +146,4 @@ struct MockAPIProvider: APIProvider {
             .eraseToAnyPublisher()
     }
 }
+
