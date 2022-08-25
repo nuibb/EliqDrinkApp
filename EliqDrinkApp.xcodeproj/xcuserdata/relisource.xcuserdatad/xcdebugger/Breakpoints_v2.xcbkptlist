@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1A664BBB-F00B-4CD5-90EA-8D0C1063C76F"
+            uuid = "A26B56D7-8129-485E-A768-22A7A72C9712"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EliqDrinkAppTests/EliqDrinkAppTests.swift"
+            filePath = "EliqDrinkAppTests/ViewModelUnitTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "test_Mock_Data_With_ValidRequest_Returns_ValidResponse()"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "test_drink_name_always_return_valid_text()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

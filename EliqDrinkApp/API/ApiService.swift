@@ -65,6 +65,6 @@ import Combine
     
     // MARK: Save Into Local DB
     func saveDataIntoLocalDatabase() {
-        
+        guard self.dataSource.count > 0 else { return }
     }
 }

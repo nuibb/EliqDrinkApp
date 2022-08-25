@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct DetailsList : Decodable {
-    let objects : [DrinkDetails]?
+struct DetailsList : Codable {
+    let objects : [DrinkDetails]
 
     enum CodingKeys: String, CodingKey {
         case objects = "drinks"
@@ -16,11 +16,11 @@ struct DetailsList : Decodable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        objects = try values.decodeIfPresent([DrinkDetails].self, forKey: .objects)
+        objects = try values.decodeIfPresent([DrinkDetails].self, forKey: .objects) ?? []
     }
 }
 
-struct DrinkDetails : Decodable {
+struct DrinkDetails : Codable {
     let idDrink : String?
     let strDrink : String?
     var strDrinkAlternate : String?

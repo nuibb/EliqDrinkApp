@@ -38,13 +38,17 @@ struct DetailsContentView: View {
                 .padding()
             Text(viewModel.title)
                 .itemTextModifier()
-            Text(viewModel.ingredientMeasurementTitle)
+            Text(viewModel.ingredientsTitle)
                 .itemTextModifier()
                 .padding(.top, 10)
                 .padding(.bottom, 10)
             ForEach(viewModel.recipes.indices, id:\.self) { index in // show received results
-                Text("\(viewModel.recipes[index].ingredient) : \(viewModel.recipes[index].measure)")
-                    .descriptionTextModifier()
+                HStack {
+                    Text(viewModel.recipes[index].ingredient)
+                        .descriptionTextModifier()
+                    Text(viewModel.recipes[index].measure)
+                        .descriptionTextModifier()
+                }
             }
             Text(viewModel.instructionsTitle)
                 .itemTextModifier()
@@ -62,7 +66,7 @@ struct DetailsContentView: View {
 struct DetailsContentView_Previews: PreviewProvider {
     static var previews: some View {
         let apiService = ApiService(apiFetcher: ApiFetcher(), networkMonitor: NetworkMonitor.shared)
-        let viewModel = DetailsViewModel(drinkId: 0, apiService: apiService)
+        let viewModel = DetailsViewModel(drinkId: 15423, apiService: apiService)
         DetailsContentView(viewModel: viewModel)
     }
 }
