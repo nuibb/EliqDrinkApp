@@ -38,7 +38,7 @@ struct DetailsContentView: View {
                 .padding()
             Text(viewModel.title)
                 .itemTextModifier()
-            Text(viewModel.ingredientMeasurementTitle)
+            Text(viewModel.ingredientsTitle)
                 .itemTextModifier()
                 .padding(.top, 10)
                 .padding(.bottom, 10)

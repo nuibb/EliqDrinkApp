@@ -27,8 +27,8 @@ class DetailsViewModel: Identifiable, ObservableObject {
     func fetchDrinkdetailsData() async {
         let results: Result<DetailsList, ApiError> = await self.apiService.fetchDrinkDetails(drinkId: drinkId)
         guard case .success(let detailsList) = results else { return }
-        guard let objects = detailsList.objects, objects.count > 0 else { return }
-        self.drinkDetailsList = objects
+        guard detailsList.objects.count > 0 else { return }
+        self.drinkDetailsList = detailsList.objects
         self.getAllIngredients()
     }
     
@@ -52,9 +52,9 @@ class DetailsViewModel: Identifiable, ObservableObject {
         return text
     }
     
-    var ingredientMeasurementTitle: String {
+    var ingredientsTitle: String {
         guard drinkDetailsList.count > 0, recipes.count > 0 else { return ""}
-        return Constants.ingredientMeasurementText.uppercased()
+        return Constants.ingredientsText
     }
     
     var instructionsTitle: String {
