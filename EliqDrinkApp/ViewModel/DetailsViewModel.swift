@@ -17,6 +17,7 @@ class DetailsViewModel: Identifiable, ObservableObject {
     
     // List of recipes to show in UI
     var recipes: [Recipe] = []
+    var instructions: [(key:String, value:String)] = []
     
     init(drinkId: Int, apiService: ApiService) {
         self.drinkId = drinkId
@@ -46,14 +47,19 @@ class DetailsViewModel: Identifiable, ObservableObject {
         return drinkDetails.strDrink ?? ""
     }
     
-    var instruction: String {
-        guard drinkDetailsList.count > 0, let drinkDetails = drinkDetailsList.first else {return ""}
-        return drinkDetails.strInstructions ?? ""
+    func getInstructionLanKey(title: String) -> String {
+        guard let text = title.components(separatedBy: "Instructions").last, !text.isEmpty else { return "EN" }
+        return text
     }
     
     var ingredientMeasurementTitle: String {
         guard drinkDetailsList.count > 0, recipes.count > 0 else { return ""}
         return Constants.ingredientMeasurementText
+    }
+    
+    var instructionsTitle: String {
+        guard instructions.count > 0 else { return ""}
+        return Constants.instructionsText
     }
     
     var thumbUrl: String {
@@ -67,11 +73,13 @@ class DetailsViewModel: Identifiable, ObservableObject {
         var ingredients: [[String: String]] = []
         var measures: [[String: String]] = []
         for (label, value) in drinkDetailsMirror.children {
-            guard let label = label, value is String else { continue }
-            if label.contains("Ingredient") {
-                ingredients.append([label: value as! String])
-            } else if label.contains("Measure") {
-                measures.append([label: value as! String])
+            guard let label = label, let value = value as? String else { continue }
+            if label.contains("Ingredient") && !value.isEmpty {
+                ingredients.append([label : value ])
+            } else if label.contains("Measure") && !value.isEmpty {
+                measures.append([label : value ])
+            } else if label.contains("Instructions") && !value.isEmpty {
+                self.instructions.append((key: label, value: value))
             }
         }
         

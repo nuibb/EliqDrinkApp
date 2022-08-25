@@ -38,14 +38,20 @@ struct DetailsContentView: View {
                 .padding()
             Text(viewModel.title)
                 .itemTextModifier()
-            Text(viewModel.instruction)
-                .descriptionTextModifier()
             Text(viewModel.ingredientMeasurementTitle)
                 .itemTextModifier()
                 .padding(.top, 10)
                 .padding(.bottom, 10)
             ForEach(viewModel.recipes.indices, id:\.self) { index in // show received results
                 Text("\(viewModel.recipes[index].ingredient) : \(viewModel.recipes[index].measure)")
+                    .descriptionTextModifier()
+            }
+            Text(viewModel.instructionsTitle)
+                .itemTextModifier()
+                .padding(.top, 10)
+                .padding(.bottom, 10)
+            ForEach($viewModel.instructions.indices, id:\.self) { index in // show received results
+                Text("\(viewModel.getInstructionLanKey(title:viewModel.instructions[index].0)) : \(viewModel.instructions[index].1)")
                     .descriptionTextModifier()
             }
         }
