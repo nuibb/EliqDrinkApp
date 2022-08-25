@@ -54,7 +54,7 @@ class DetailsViewModel: Identifiable, ObservableObject {
     
     var ingredientMeasurementTitle: String {
         guard drinkDetailsList.count > 0, recipes.count > 0 else { return ""}
-        return Constants.ingredientMeasurementText
+        return Constants.ingredientMeasurementText.uppercased()
     }
     
     var instructionsTitle: String {
