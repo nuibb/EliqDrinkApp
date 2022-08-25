@@ -104,7 +104,7 @@ class EliqDrinkAppTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func fetch_data_with_success_mock_api_call() throws {
+    func test_fetch_data_with_success_mock_api_call() throws {
         // given
        // var disposables = Set<AnyCancellable>()
         let expectation = self.expectation(description: "ValidRequest_Returns_ValidResponse")

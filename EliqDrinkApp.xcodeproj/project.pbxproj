@@ -42,6 +42,8 @@
 		8BDEA89128B47A3F008A92E7 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDEA89028B47A3F008A92E7 /* Recipe.swift */; };
 		8BE2397C28B5D92E00039C41 /* drinks.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BE2397B28B5D92E00039C41 /* drinks.json */; };
 		8BE2398028B60BA400039C41 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE2397F28B60BA400039C41 /* ApiProvider.swift */; };
+		8BE2398528B755FE00039C41 /* ViewModelUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE2398428B755FE00039C41 /* ViewModelUnitTests.swift */; };
+		8BE2398928B75B1900039C41 /* details.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BE2398828B75B1900039C41 /* details.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		8BDEA89028B47A3F008A92E7 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		8BE2397B28B5D92E00039C41 /* drinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinks.json; sourceTree = "<group>"; };
 		8BE2397F28B60BA400039C41 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		8BE2398428B755FE00039C41 /* ViewModelUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelUnitTests.swift; sourceTree = "<group>"; };
+		8BE2398828B75B1900039C41 /* details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = details.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				8B70F06428AF880B00656C48 /* EliqDrinkAppTests.swift */,
+				8BE2398428B755FE00039C41 /* ViewModelUnitTests.swift */,
 			);
 			path = EliqDrinkAppTests;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 		8BE2397A28B5D92000039C41 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8BE2398828B75B1900039C41 /* details.json */,
 				8BE2397B28B5D92E00039C41 /* drinks.json */,
 			);
 			path = Data;
@@ -400,6 +406,7 @@
 				8B70F05A28AF880B00656C48 /* LaunchScreen.storyboard in Resources */,
 				8B70F05728AF880B00656C48 /* Assets.xcassets in Resources */,
 				8BE2397C28B5D92E00039C41 /* drinks.json in Resources */,
+				8BE2398928B75B1900039C41 /* details.json in Resources */,
 				8B70F05528AF880900656C48 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BE2398528B755FE00039C41 /* ViewModelUnitTests.swift in Sources */,
 				8B70F06528AF880B00656C48 /* EliqDrinkAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
