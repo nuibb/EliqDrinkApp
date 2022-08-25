@@ -35,6 +35,8 @@ struct DrinkDetails : Decodable {
     var strInstructionsDE : String?
     var strInstructionsFR : String?
     var strInstructionsIT : String?
+    var strInstructionsZH_HANS : String?
+    var strInstructionsZH_HANT : String?
     var strDrinkThumb : String?
     var strIngredient1 : String?
     var strIngredient2 : String?
@@ -95,6 +97,8 @@ struct DrinkDetails : Decodable {
         case strInstructionsDE = "strInstructionsDE"
         case strInstructionsFR = "strInstructionsFR"
         case strInstructionsIT = "strInstructionsIT"
+        case strInstructionsZH_HANS = "strInstructionsZH-HANS"
+        case strInstructionsZH_HANT = "strInstructionsZH-HANT"
         case strDrinkThumb = "strDrinkThumb"
         case strIngredient1 = "strIngredient1"
         case strIngredient2 = "strIngredient2"
@@ -148,6 +152,8 @@ struct DrinkDetails : Decodable {
         strInstructionsDE = try values.decodeIfPresent(String.self, forKey: .strInstructionsDE)
         strInstructionsFR = try values.decodeIfPresent(String.self, forKey: .strInstructionsFR)
         strInstructionsIT = try values.decodeIfPresent(String.self, forKey: .strInstructionsIT)
+        strInstructionsZH_HANS = try values.decodeIfPresent(String.self, forKey: .strInstructionsZH_HANS)
+        strInstructionsZH_HANT = try values.decodeIfPresent(String.self, forKey: .strInstructionsZH_HANT)
         strDrinkThumb = try values.decodeIfPresent(String.self, forKey: .strDrinkThumb)
         strIngredient1 = try values.decodeIfPresent(String.self, forKey: .strIngredient1)
         strIngredient2 = try values.decodeIfPresent(String.self, forKey: .strIngredient2)
